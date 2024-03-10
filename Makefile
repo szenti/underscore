@@ -14,6 +14,9 @@ scan:
 scan-config:
 	trivy config .
 
+bench:
+	 go test -run='^$$' -bench=. -count=10 -benchmem
+
 .PHONY: docs
 docs:
 	cd docs && hugo server -D
